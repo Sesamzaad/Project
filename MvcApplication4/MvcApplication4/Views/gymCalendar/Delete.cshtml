@@ -1,0 +1,67 @@
+﻿@model MvcApplication4.Models.Calendar
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Calendar</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.titel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titel)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.datum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.datum)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.start)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.start)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.einde)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.einde)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.opdrachten)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.opdrachten)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.modus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.modus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.note)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.note)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
