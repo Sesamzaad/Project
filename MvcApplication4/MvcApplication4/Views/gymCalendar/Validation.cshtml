@@ -1,0 +1,37 @@
+﻿@model MvcApplication4.Models.Admin
+
+@{
+    ViewBag.Title = "Validation";
+    Layout = "../_Create.cshtml";
+
+}
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <form id="formCreate" runat="server" role="form">
+    <div class="container desc">
+		<div class="rowCreate">
+            <div class="divBovenCreate">
+            <h2 class="page-header"><t>Do you belong here?</t></h2>
+            </div>
+				<div class="col-lg-6">
+    			 <div class="editor-label">
+                        <label>Authentication code</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.PasswordFor(x => x.password)
+
+                        @Html.ValidationMessageFor(x => x.password)
+                    </div>
+                    <br />
+                    
+                    <br />
+				    <input type="submit" value="Try me" class="btn btn-info"/>
+				</div>
+            <label class="label label-danger">@ViewBag.wrong</label>
+	
+		</div>
+        </div>
+        
+        </form>
+ 
+ }

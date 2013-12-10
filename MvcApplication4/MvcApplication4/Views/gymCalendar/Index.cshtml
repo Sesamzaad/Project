@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MvcApplication4.Models.Calendar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "../_Index.cshtml";
+}
+@foreach (var item in Model) {
+    string datumToday = DateTime.Today.ToShortDateString();
+    string datEvent = item.datum.ToString();
+    string datumEvent = datEvent.Substring(0,10);
+
+    string input = item.opdrachten;
+    string opdr = input.Replace(",", "</h6><br/><h6>");
+        <script>
+        
+        $(opdrachtenLijst).html("<h3>" + opdr + "</h3>");
+    </script>
+
+    var timeH = Convert.ToInt16(DateTime.Now.Hour);
+    var timeM = Convert.ToInt16(DateTime.Now.Minute);
+    
+    
+    String duurtijd = item.start.ToString().Substring(0,5) + " - " + item.einde.ToString().Substring(0,5);
+    
+    if(datumToday == datumEvent)
+    {
+
+        <div class="container desc">
+		<div class="row">
+            <div class="divBoven"> 
+            <h2><t>@Html.DisplayFor(modelItem => item.titel)</t></h2>
+            <h3 class="noSpace2">@Html.DisplayFor(modelItem => item.modus)</h3>
+            </div>
+				<div class="col-lg-2 col-lg-offset-1">
+    			<h3 class="noSpace">@Html.DisplayFor(modelItem => duurtijd)</h3>
+
+				</div>
+				<div class="col-lg-6">
+					<div class="Opdrachten">
+                    <h3 class="noSpace" id="Opdrachten">Instructions</h3>
+                    <div id="opdrachtenLijst" runat="server">
+                      
+                    <h3 class="noSpace2">@Html.DisplayFor(modelItem => item.opdrachten)</h3>
+                    </div>
+                    </div>
+				</div>
+				<div class="col-lg-3">
+					 <h3 class="noSpace">Important</h3>
+					 <h3 class="noSpace2">@Html.DisplayFor(modelItem => item.note)</h3>
+
+				</div>
+	
+		</div>
+            </div>
+        
+     
+}  
+   
+
+
+else
+{
+
+    }
+
+   
+}
+
+

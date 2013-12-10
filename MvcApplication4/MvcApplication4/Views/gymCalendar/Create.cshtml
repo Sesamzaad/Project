@@ -1,0 +1,102 @@
+﻿@model MvcApplication4.Models.Calendar
+@{
+    ViewBag.Title = "Create";
+    Layout = "../_Create.cshtml";
+
+}
+	<script src="../Assets/datepicker/js/bootstrap-datepicker.js"></script>
+	<link href="../Assets/datepicker/css/datepicker.css" rel="stylesheet" />
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true) {
+    <form id="formCreate" runat="server" role="form">
+    <div class="container desc">
+		<div class="rowCreate">
+            <div class="divBovenCreate">
+            <h2 class="page-header"><t>Create a new event</t></h2>
+            </div>
+				<div class="col-lg-6">
+    			
+				    <div class="editor-label">
+                        <label>Title</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.titel, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.titel)
+                    </div>
+                    <div class="editor-label">
+                        <label>Instructions</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.opdrachten, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.opdrachten)
+
+                    </div>
+
+                    <div class="editor-label">
+                        <label>Atmosphere</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.modus, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.modus)
+
+                    </div>
+
+                    <div class="editor-label">
+                        <label>Note</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.note, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.note)
+
+                    </div>
+        </div>
+				<div class="col-lg-3">
+                <div class="editor-label">
+                   <label>Date</label>
+                </div>
+			    <div class="editor-field">
+                        
+                        @Html.TextBoxFor(model => model.datum, new {@class="form-control", @id = "datepicker" })
+                        @Html.ValidationMessageFor(model => model.datum)
+
+                    </div>
+
+                    <div class="editor-label">
+                        <label>Start time</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.start, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.start)
+
+                    </div>
+
+                    <div class="editor-label">
+                        <label>End time</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.einde, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.einde)
+
+                    </div>
+            
+                    <p>
+                        <input type="submit" value="Create" id="btnCreate" class="btn btn-info"/>
+                    </p>
+                    <label class="label label-danger">@ViewBag.error</label>
+
+
+	
+		</div>
+        </div>
+        </div>
+        
+        </form>
+ 
+ }
+ }

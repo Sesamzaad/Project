@@ -1,0 +1,81 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../Assets/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Assets/assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Assets/assets/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="../Assets/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../Assets/assets/js/smoothscroll.js"></script> 
+    <script src="../Assets/assets/js/Chart.js"></script>
+        <script src="~/Scripts/jquery-2.0.3.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="../Assets/assets/css/main2.css" rel="stylesheet">
+	<link rel="stylesheet" href="../Assets/assets/css/font-awesome.min.css">
+
+	<script src="../Assets/assets/js/Chart.js"></script>
+	<script src="../Assets/assets/js/modernizr.custom.js"></script>
+	
+
+	
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="~/Scripts/jquery-2.0.3.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-offset="0" data-target="#theMenu">
+		
+	<!-- Menu -->
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a href="/gymCalendar">Gym Calendar</a></h1>
+			<i class="icon-remove menu-close"></i>
+			<a href="/gymCalendar/Validation" class="smoothScroll">Admin</a>
+			<a href="/gymCalendar" class="smoothScroll">Home</a>
+			<a href="/gymCalendar/Overview" class="smoothScroll">Overview</a>
+
+		</div>
+		
+		<!-- Menu button -->
+		<div id="menuToggle"><i class="icon-reorder"></i></div>
+	</nav>
+
+    <div id="headerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-12">
+					<h1>The Creativity Gym</h1>
+					<h2 id="header2">Event Calendar</h2>
+				</div><!--/.col-lg-12 -->
+			</div><!--/.row -->
+		</div><!--/.container -->
+	</div><!--/.#headerwrap -->
+	
+				@RenderBody()
+    <br />
+    <br />
+    <br />
+    <br />
+	<div id="c2">
+		<div class="container">
+			<p>Created by <a href="http://www.hofmansander.com">Hofman Sander</a></p>
+		
+		</div>
+	</div>			
+    <script src="../Assets/assets/js/classie.js"></script>
+    <script src="../Assets/assets/js/bootstrap.min.js"></script>
+	<script src="../Assets/assets/js/main2.js"></script>
+	<script>
+	    $('.carousel').carousel({
+	        interval: 3500
+	    })
+	</script>
+    
+</body>
+</html>

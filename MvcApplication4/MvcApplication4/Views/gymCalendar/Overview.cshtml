@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MvcApplication4.Models.Calendar>
+
+@{
+    ViewBag.Title = "Overview";
+    Layout = "../_Overview.cshtml";
+
+}
+
+@foreach (var item in Model) {
+    var EStime = item.start.ToString();
+    var EEtime = item.einde.ToString();
+    String duurtijd = EStime.Substring(0, 5) + " - " + EEtime.Substring(0, 5);
+
+    String datum = item.datum.ToShortDateString();
+    String wann = datum + " " + duurtijd;
+    
+  
+    <div class="container desc">
+		<div class="row">
+            <div class="divBoven">
+            <h2><t>@Html.DisplayFor(modelItem => item.titel)</t></h2>
+            <h3 class="noSpace2">@Html.DisplayFor(modelItem => item.modus)</h3>
+            </div>
+				<div class="col-lg-2 col-lg-offset-1">
+    			<h3 class="noSpace">@Html.DisplayFor(modelItem => wann) </h3>
+        
+				</div>
+				<div class="col-lg-6">
+					<div class="Opdrachten">
+                    <h3 class="noSpace" id="Opdrachten">Instructions</h3>
+                    <div id="opdrachtenLijst">
+                    <h3 class="noSpace2">@Html.DisplayFor(modelItem => item.opdrachten)</h3>
+                    </div>
+                    </div>
+				</div>
+				<div class="col-lg-3">
+					 <h3 class="noSpace">Important</h3>
+					 <h3 class="noSpace2">@Html.DisplayFor(modelItem => item.note)</h3>
+
+				</div>
+	
+		</div>
+            </div>
+    
+}
+
+

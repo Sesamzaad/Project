@@ -1,0 +1,78 @@
+﻿@font-face {
+    font-family:Awesome;
+    src:url("fonts/fontawesome-webfont.ttf");
+}
+body {
+    background-color:black;
+   font-family:Sansation;
+    
+  
+}
+
+.container {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.left {
+    float:left;
+    width:30%;
+    margin-left:250;
+    margin-right:auto;
+    margin-top:250;
+
+}
+
+.right {
+    float:right;
+    margin-left:auto;
+    margin-right:250;
+    padding-right:200px;
+    text-align:left;
+    margin-top:250;
+    margin-bottom:auto;
+}
+h2 {
+    font-size:35pt;
+    font:"Sansation";
+    color:white;
+    padding-bottom:0;
+    margin-bottom:0;
+    margin-top:auto;
+    margin-bottom:auto;
+}
+h4 {
+    font-size:15pt;
+    font:"Sansation";
+    color:#c4bcbc;
+    font-weight:200;
+    margin-top:0;
+    padding-top:0;
+    padding-bottom:0;
+    margin-bottom:50;
+    margin-top:auto;
+    margin-bottom:auto;
+}
+h5 {
+    font-size:20pt;
+    font:"Sansation";
+    color:#dd3b0f;
+    font-weight:100;
+        padding-bottom:0;
+    margin-bottom:0;
+    margin-top:auto;
+    margin-bottom:auto;
+}
+h6 {
+    font-size:15pt;
+    font:"Sansation";
+    font-weight:200;
+    color:white;
+    padding-bottom:0;
+    margin-bottom:20;
+    margin-top:auto;
+    margin-bottom:auto;
+}
+#back {
+    margin-top:100px;
+}

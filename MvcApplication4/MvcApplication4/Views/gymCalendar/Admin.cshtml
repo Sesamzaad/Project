@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MvcApplication4.Models.Calendar>
+
+@{
+    ViewBag.Title = "Admin";
+    Layout = "../_Create.cshtml";
+
+}
+<form id="formCreate" runat="server" role="form">
+    <div class="container desc">
+	<div class="row">
+    <div class="panel panel-danger">
+    <div class="panel-heading">Administration of events</div>
+    <div class="panel-body">
+    <p>You can edit and/or delete the events listed for the gym here</p>
+    @Html.ActionLink("Create a new event", "Create")
+    </div>
+
+    <table class="table">
+
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Duration
+        </th>
+       
+        <th>
+            Instructions
+        </th>
+        <th>
+            Atmosphere
+        </th>
+        <th>
+            Note
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    var EStime = item.start.ToString();
+    var EEtime = item.einde.ToString();
+    String duurtijd = EStime.Substring(0, 5) + " - " + EEtime.Substring(0, 5);
+
+    String datum = item.datum.ToShortDateString();
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.titel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => datum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => duurtijd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.opdrachten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.note)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+            </div>
+        </div>
+        </div>
+</form>
